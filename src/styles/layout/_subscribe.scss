@@ -41,9 +41,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 50px;
+    gap: 40px;
     max-width: 772px;
     margin: 0 auto;
+  }
+
+  &__input-box:last-of-type {
+    width: 100%;
   }
 
   &__input {
@@ -52,16 +56,27 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 55px;
-    width: calc(50% - 25px);
     border-radius: 20px 0px;
     background-color: $input-bg-color;
     outline: none;
     border: none;
     padding: 0 20px;
+    width: 338px;
   }
 
   &__input-bottom {
     width: 100%;
+  }
+
+  &__error {
+    color: rgb(197, 24, 24);
+    font-family: $primary-font;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 10px;
+    max-width: 338px;
+    height: 56px;
   }
 
   &__btn {

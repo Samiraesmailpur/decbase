@@ -252,24 +252,32 @@
             newsletter.
           </p>
           <form class="subscribe__form">
-            <input
-              name="name"
-              class="subscribe__input"
-              placeholder="Enter your name....."
-              type="text"
-            />
-            <input
-              name="surname"
-              class="subscribe__input"
-              placeholder="Enter your surname....."
-              type="text"
-            />
-            <input
-              name="email"
-              class="subscribe__input subscribe__input-bottom"
-              placeholder="Enter your e-mail....."
-              type="email"
-            />
+            <div class="subscribe__input-box">
+              <input
+                name="name"
+                class="subscribe__input name"
+                placeholder="Enter your name....."
+                type="text"
+              />
+              <p class="subscribe__error" id="error-name"></p>
+            </div>
+            <div class="subscribe__input-box">
+              <input
+                name="surname"
+                class="subscribe__input surname"
+                placeholder="Enter your surname....."
+                type="text"
+              />
+              <p class="subscribe__error" id="error-surname"></p>
+            </div>
+            <div class="subscribe__input-box">
+              <input
+                name="email"
+                class="subscribe__input subscribe__input-bottom email"
+                placeholder="Enter your e-mail....."
+              />
+              <p class="subscribe__error" id="error-email"></p>
+            </div>
             <button class="subscribe__btn" type="submit">SUBSCRIBE</button>
           </form>
         </div>
