@@ -87,4 +87,23 @@
     width: 278px;
     height: 55px;
   }
+
+  &__block {
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 1s ease, transform 0.5s ease;
+
+    &:hover > .news__content {
+      opacity: 1;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__content {
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
 }

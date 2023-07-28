@@ -113,14 +113,23 @@
               <p class="work__amount">980</p>
               <p class="work__text">Project</p>
             </div>
+            <svg class="work__line">
+              <use href="./images/symbol-defs.svg#icon-line"></use>
+            </svg>
             <div class="work__block">
               <p class="work__amount">520</p>
               <p class="work__text">Happy Client</p>
             </div>
+            <svg class="work__line">
+              <use href="./images/symbol-defs.svg#icon-line"></use>
+            </svg>
             <div class="work__block">
               <p class="work__amount">330</p>
               <p class="work__text">Winners</p>
             </div>
+            <svg class="work__line">
+              <use href="./images/symbol-defs.svg#icon-line"></use>
+            </svg>
             <div class="work__block">
               <p class="work__amount">120</p>
               <p class="work__text">Recoment</p>
@@ -205,25 +214,34 @@
                   alt="nightstand and mirror"
                 />
               </div>
-              <h4 class="news__caption">2020 Interior Design Trends</h4>
-              <p class="news__desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt
-                ut labore et dolore magna aliqua.
-              </p>
-              <button class="news__btn" type="button">CONTINUE READING....</button>
+              <div class="news__content">
+                <h4 class="news__caption">2020 Interior Design Trends</h4>
+                <p class="news__desc">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt
+                  ut labore et dolore magna aliqua.
+                </p>
+                <button class="news__btn" type="button">CONTINUE READING....</button>
+              </div>
             </div>
             <div class="news__block">
               <div class="news__box-image">
                 <img class="news__image" src="./images/news-room.png" alt="living room" />
               </div>
-              <h4 class="news__caption">28 Notable Product at ARC Interior Design</h4>
-              <p class="news__desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt
-                ut labore et dolore magna aliqua.
-              </p>
-              <button class="news__btn" type="button">CONTINUE READING....</button>
+              <div class="news__content">
+                <h4 class="news__caption">28 Notable Product at ARC Interior Design</h4>
+                <p class="news__desc">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt
+                  ut labore et dolore magna aliqua.
+                </p>
+                <button class="news__btn" type="button">CONTINUE READING....</button>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
+      <section class="shop">
+        <div class="container">
+          <h3>Our Products</h3>
         </div>
       </section>
       <section id="subscribe" class="subscribe">
@@ -234,15 +252,26 @@
             newsletter.
           </p>
           <form class="subscribe__form">
-            <input class="subscribe__input" placeholder="Enter your name....." type="text" />
-            <input class="subscribe__input" placeholder="Enter your surname....." type="text" />
             <input
-              class="subscribe__input subscribe__input-bottom"
-              placeholder="Enter your e-mail....."
+              name="name"
+              class="subscribe__input"
+              placeholder="Enter your name....."
               type="text"
             />
+            <input
+              name="surname"
+              class="subscribe__input"
+              placeholder="Enter your surname....."
+              type="text"
+            />
+            <input
+              name="email"
+              class="subscribe__input subscribe__input-bottom"
+              placeholder="Enter your e-mail....."
+              type="email"
+            />
+            <button class="subscribe__btn" type="submit">SUBSCRIBE</button>
           </form>
-          <button class="subscribe__btn" type="submit">SUBSCRIBE</button>
         </div>
       </section>
     </main>
@@ -358,6 +387,12 @@
         </div>
       </div>
     </footer>
+    <div class="modal">
+      <div class="modal__content">
+        <p>Are you here?</p>
+        <button class="modal__btn" type="button">Confirm</button>
+      </div>
+    </div>
     <div class="loader">
       <div class="loader__inner">
         <label>●</label>
