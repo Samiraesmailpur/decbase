@@ -9,8 +9,14 @@ let firstEl = false;
 
 const trueCallback = function (entries, observer) {
   entries.forEach(entry => {
-    Array.from(newsBlock).forEach(item => {
-      entry.isIntersecting ? (item.style.opacity = '1') : (item.style.opacity = '0');
+    Array.from(newsBlock).forEach((item, index) => {
+      if (entry.isIntersecting) {
+        item.classList.add('show');
+        item.classList.remove('hide', 'hide--delay');
+      } else {
+        item.classList.remove('show');
+        item.classList.add(index === 0 ? 'hide' : 'hide--delay');
+      }
     });
   });
 };

@@ -89,21 +89,33 @@
   }
 
   &__block {
-    opacity: 0;
     cursor: pointer;
-    transition: opacity 1s ease, transform 0.5s ease;
+    transition: opacity 1s ease;
+    opacity: 0;
 
-    &:hover > .news__content {
-      opacity: 1;
-    }
-
-    &:hover {
-      transform: scale(1.1);
+    &--delay {
+      transition: opacity 2s ease;
     }
   }
 
-  &__content {
-    opacity: 0;
+  &__box-image {
+    transition: opacity 300ms ease, transform 300ms ease;
+  }
+  &__box-image:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.show {
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
+  transition: opacity 2s ease;
+
+  &--delay {
     transition: opacity 1s ease;
   }
 }

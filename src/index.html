@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
   </head>
   <body>
     <header class="header">
@@ -42,6 +43,12 @@
             </ul>
             <a class="nav__btn" href="">Sign Up</a>
           </div>
+          <svg class="nav__burger" width="24" height="14">
+            <use href="./images/symbol-defs.svg#icon-burger"></use>
+          </svg>
+          <svg class="nav__cross" width="24" height="14">
+            <use href="./images/symbol-defs.svg#icon-cross"></use>
+          </svg>
         </nav>
       </div>
       <div class="nav__progress-container">
@@ -66,8 +73,15 @@
           </div>
         </div>
       </section>
-      <section id="services">
-        <div></div>
+      <section id="services" class="services">
+        <div class="services__container container">
+          <p class="services__pre-title">WHAT WE DO</p>
+          <h3 class="services__title">Our Service</h3>
+          <div class="services__btn-box">
+            <button class="services__btn services__btn-all">ALL</button>
+          </div>
+          <div class="services__content"></div>
+        </div>
       </section>
       <section id="about" class="about">
         <div class="container about__container">
@@ -92,7 +106,7 @@
           </div>
           <div class="about__success">
             <div class="about__content">
-              <img class="about__img" src="./images/twenty.png" alt="20" />
+              <div class="about__years">20</div>
               <h2 class="about__success-title">
                 Years Of Successful Working <br />
                 The Market
@@ -138,7 +152,7 @@
         </div>
       </section>
       <section id="testimonials" class="testimonials">
-        <div class="container testimonials__container">
+        <div class="container testimonials__container swiper MySwiper">
           <p class="testimonials__pre-title">TESTIMONIALS</p>
           <h3 class="testimonials__title">Client says about us</h3>
           <div class="testimonials__box-btn">
@@ -153,50 +167,34 @@
               </svg>
             </button>
           </div>
-          <div class="testimonials__content">
-            <div class="testimonials__block">
-              <img class="testimonials__img" src="./images/louis.png" alt="man" />
-              <p class="testimonials__name">
-                Louis Saville <span class="testimonials__job"> /CEO at Google inc </span>
-              </p>
-              <span class="testimonials__mark">”</span>
-              <p class="testimonials__desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-            <div class="testimonials__block">
-              <img class="testimonials__img" src="./images/louis.png" alt="man" />
-              <p class="testimonials__name">
-                Louis Saville <span class="testimonials__job"> /CEO at Google inc </span>
-              </p>
-              <span class="testimonials__mark">”</span>
-              <p class="testimonials__desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-            <div class="testimonials__block">
-              <img class="testimonials__img" src="./images/louis.png" alt="man" />
-              <p class="testimonials__name">
-                Louis Saville <span class="testimonials__job"> /CEO at Google inc </span>
-              </p>
-              <span class="testimonials__mark">”</span>
-              <p class="testimonials__desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-            <div class="testimonials__block swiper-slide">
-              <img class="testimonials__img" src="./images/rekha.png" alt="woman" />
-              <p class="testimonials__name">
-                Rekha Varadwaz <span class="testimonials__job"> /Manager at Nike inc </span>
-              </p>
-              <span class="testimonials__mark">”</span>
-              <p class="testimonials__desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua.
-              </p>
+          <div class="testimonials__content swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="testimonials__block swiper-slide">
+                <div class="testimonials__wrapper">
+                  <img class="testimonials__img" src="./images/louis.png" alt="man" />
+                  <p class="testimonials__name">
+                    Louis Saville <span class="testimonials__job"> /CEO at Google inc </span>
+                  </p>
+                  <span class="testimonials__mark">”</span>
+                  <p class="testimonials__desc">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+              </div>
+              <div class="testimonials__block swiper-slide">
+                <div class="testimonials__wrapper">
+                  <img class="testimonials__img" src="./images/rekha.png" alt="woman" />
+                  <p class="testimonials__name">
+                    Rekha Varadwaz <span class="testimonials__job"> /Manager at Nike inc </span>
+                  </p>
+                  <span class="testimonials__mark">”</span>
+                  <p class="testimonials__desc">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -223,7 +221,7 @@
                 <button class="news__btn" type="button">CONTINUE READING....</button>
               </div>
             </div>
-            <div class="news__block">
+            <div class="news__block news__block--delay">
               <div class="news__box-image">
                 <img class="news__image" src="./images/news-room.png" alt="living room" />
               </div>
@@ -237,11 +235,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="shop">
-        <div class="container">
-          <h3>Our Products</h3>
         </div>
       </section>
       <section id="subscribe" class="subscribe">
@@ -401,6 +394,19 @@
         <button class="modal__btn" type="button">Confirm</button>
       </div>
     </div>
+    <div class="confetti">
+      <div class="confetti__piece"></div>
+      <div class="confetti__piece"></div>
+      <div class="confetti__piece"></div>
+      <div class="confetti__piece"></div>
+      <div class="confetti__piece"></div>
+      <div class="confetti__piece"></div>
+      <div class="confetti__piece"></div>
+      <div class="confetti__piece"></div>
+      <div class="confetti__piece"></div>
+      <div class="confetti__piece"></div>
+      <div class="confetti__content"></div>
+    </div>
     <div class="loader">
       <div class="loader__inner">
         <label>●</label>
@@ -411,5 +417,6 @@
         <label>●</label>
       </div>
     </div>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   </body>
 </html>

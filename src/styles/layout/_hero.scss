@@ -3,14 +3,22 @@
   padding-bottom: 100px;
 
   &__container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include desktop-large {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @include desktop-small {
+      flex-wrap: wrap;
+    }
   }
 
   &__box-text {
     max-width: 621px;
     margin-right: 10px;
+    @include desktop-small {
+      margin-bottom: 50px;
+    }
   }
 
   &__pretitle {
@@ -51,9 +59,10 @@
 
   &__box-image {
     position: relative;
+    display: inline-block;
 
     &::after {
-       @include after-border;
+      @include after-border;
       top: 5%;
       left: 5%;
     }

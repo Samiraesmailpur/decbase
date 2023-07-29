@@ -6,8 +6,6 @@ const errorName = document.querySelector('#error-name');
 const errorSurname = document.querySelector('#error-surname');
 const errorEmail = document.querySelector('#error-email');
 
-const date = new Date().toLocaleDateString('uk-UA');
-
 const emailRegex =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const fullNameRegex = /^[A-Z][a-zA-Z]*$/;
@@ -59,12 +57,24 @@ form.addEventListener('submit', e => {
 
     localStorage.setItem('formData', JSON.stringify(formData));
     form.reset();
-    getDiscount();
+    const data = JSON.parse(localStorage.getItem('formData'));
+    if (data.name === 'Sigma') {
+      getDiscount(data.name);
+    }
   }
 });
 
-function getDiscount() {
-  const data = JSON.parse(localStorage.getItem('formData'));
-  if (data.name === 'Sigma') {
-  }
+function getDiscount(name) {
+  const date = new Date().toLocaleDateString('uk-UA');
+  document.querySelector('body').classList.add('is-hidden');
+  document.querySelector('.confetti').style.display = 'block';
+  document.querySelector(
+    '.confetti__content'
+  ).textContent = `Hello, ${name}! Today, ${date}, you have a special offer: 120% Discount on your order =)`;
+
+  setTimeout(() => {
+    document.querySelector('.confetti__content').style.textContent = '';
+    document.querySelector('.confetti').style.display = 'none';
+    document.querySelector('body').classList.remove('is-hidden');
+  }, 5000);
 }

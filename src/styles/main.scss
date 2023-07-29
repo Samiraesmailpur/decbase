@@ -2,7 +2,8 @@
 @import './abstracts/mixins';
 @import './base/global';
 @import './components/modal';
-// @import './layout/loader';
+@import './components/confetti';
+@import './layout/loader';
 @import './layout/header';
 @import './layout/hero';
 @import './layout/service';
@@ -10,5 +11,6 @@
 @import './layout/work';
 @import './layout/testimonials';
 @import './layout/news';
+@import './layout/shop';
 @import './layout/subscribe';
 @import './layout/footer';

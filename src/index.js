@@ -1,9 +1,10 @@
-import './js/glider';
 import './styles/main.scss';
-// import './js/loader';
-import './js/get-year';
-import './js/progress-bar';
-import './js/modal-activation';
-import './js/news-appear';
+import './js/loader';
+import './js/getYear';
+import './js/progressBar';
+import './js/modalActivation';
+import './js/showNews';
 import './js/fetchProducts';
-import './js/isValidForm';
+import './js/getFormData';
+import './js/swiper';
+import './js/getData';
