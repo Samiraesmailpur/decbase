@@ -1,15 +1,18 @@
 {
   "name": "decbase",
   "version": "1.0.0",
-  "repository": {
-    "url": "git+https://github.com//Samiraesmailpur/decbase.git"
-  },
   "description": "",
+  "homepage": "https://samiraesmailpur.github.io/decbase/",
   "main": "index.js",
+  "repository": {
+    "url": "git+https://github.com/samiraesmailpur/decbase.git"
+  },
   "scripts": {
-    "start": "webpack serve --mode development --open",
-    "build": "webpack --mode production",
-    "deploy": "npm run build && gh-pages -d build"
+    "start": "webpack serve --open",
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +39,9 @@
   },
   "dependencies": {
     "glider-js": "^1.7.8",
+    "mapbox-gl": "^2.15.0",
+    "mapbox-gl-geocoder": "^2.0.1",
+    "postcss": "^8.4.27",
     "swiper": "^10.0.4"
   }
 }

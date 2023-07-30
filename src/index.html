@@ -9,6 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     />
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
   </head>
   <body>
     <header class="header">
@@ -78,7 +79,7 @@
           <p class="services__pre-title">WHAT WE DO</p>
           <h3 class="services__title">Our Service</h3>
           <div class="services__btn-box">
-            <button class="services__btn services__btn-all">ALL</button>
+            <button class="services__btn active" data-user-id="all">ALL</button>
           </div>
           <div class="services__content"></div>
         </div>
@@ -275,6 +276,12 @@
           </form>
         </div>
       </section>
+      <section class="map">
+        <div class="container">
+          <h3 class="map__title">Our location</h3>
+          <div id="coordinates" class="map__coordinates"></div>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <div class="container footer__container">
@@ -418,5 +425,6 @@
       </div>
     </div>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
   </body>
 </html>

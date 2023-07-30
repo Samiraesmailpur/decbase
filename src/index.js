@@ -4,7 +4,7 @@ import './js/getYear';
 import './js/progressBar';
 import './js/modalActivation';
 import './js/showNews';
-import './js/fetchProducts';
+import './js/map';
 import './js/getFormData';
 import './js/swiper';
 import './js/getData';

@@ -8,13 +8,26 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/decbase/',
   },
+  mode: 'development',
+  performance: { hints: false },
   module: {
     rules: [
       {
         test: /\.scss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: ['autoprefixer'],
+              },
+            },
+          },
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -30,6 +43,7 @@ module.exports = {
           },
         },
       },
+
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',

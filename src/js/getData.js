@@ -48,18 +48,21 @@ function createPost(posts) {
 }
 
 const createUserBtn = user =>
-  `<button class="services__btn" data-id="${user.id}">${user.name}</button>`;
+  `<button class="services__btn" data-user-id="${user.id}">${user.name}</button>`;
 
 btnContainer.addEventListener('click', e => {
   if (e.target.classList.contains('services__btn')) {
-    if (e.target.classList.contains('services__btn-all')) {
+    const userId = e.target.dataset.userId;
+    const activeEl = document.querySelector('.services__btn.active');
+    activeEl.classList.remove('active');
+    if (userId === 'all') {
       createPostsForAllUsers();
-    } else {
+      e.target.classList.add('active');
+      // перевіряємо чи userId число
+    } else if (!isNaN(userId)) {
+      fetchPosts(userId).then(post => createPost(post));
+      e.target.classList.add('active');
     }
-
-    let userId = e.target.dataset.id;
-    console.log(userId);
-    fetchPosts(userId).then(post => createPost(post));
   }
 });
 
