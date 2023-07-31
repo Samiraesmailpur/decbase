@@ -26,7 +26,7 @@ SCSS
 Webpack
 
 # List of APIs used in the project:
-Mapbox API (Mapbox API is used to create an interactive map showing the location of the company. The exact location on the map is indicated by a marker, and a popup window appears when you click on the marker).
+Mapbox API (The site provides an interactive map using Mapbox API. The user can enter their location and the site plots a route to the company's office. The map adapts to different devices, making it easy to work with).
 
 JSON Placeholder API (for generating users and posts in the "Services" section).
 # List of libraries used in the project:
