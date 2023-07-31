@@ -25,6 +25,9 @@
     bottom: 60px;
     left: 0;
     right: 0;
+    @include mobile-small {
+      bottom: 80px;
+    }
   }
 
   &__logo-img {

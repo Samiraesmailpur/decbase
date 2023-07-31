@@ -478,7 +478,7 @@ button {
     z-index: 2;
     position: absolute;
     right: 30px;
-    top: 25px;
+    top: 35px;
   }
 }
 
@@ -1379,6 +1379,11 @@ button {
   bottom: 60px;
   left: 0;
   right: 0;
+}
+@media screen and (max-width: 767.98px) {
+  .footer::after {
+    bottom: 80px;
+  }
 }
 .footer__logo-img {
   width: 151px;

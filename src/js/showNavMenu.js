@@ -21,7 +21,6 @@ function closeNavMenu() {
 
 function toggleNavVisibility() {
   const screenWidth = window.innerWidth;
-
   if (screenWidth >= 1200) {
     crossEl.classList.remove('show-btn');
     crossEl.classList.add('hide-btn');
@@ -32,6 +31,8 @@ function toggleNavVisibility() {
     navBox.style.display = 'none';
     burgerEl.classList.add('show-btn');
     burgerEl.classList.remove('hide-btn');
+    crossEl.classList.remove('show-btn');
+    crossEl.classList.add('hide-btn');
   }
 }
 toggleNavVisibility();
@@ -41,7 +42,10 @@ window.addEventListener('resize', toggleNavVisibility);
 burgerEl.addEventListener('click', openNavMenu);
 crossEl.addEventListener('click', closeNavMenu);
 navList.addEventListener('click', e => {
-  if (e.target.classList.contains('nav__link')) {
-    closeNavMenu();
+  const screenWidth = window.innerWidth;
+  if (screenWidth <= 1200) {
+    if (e.target.classList.contains('nav__link')) {
+      closeNavMenu();
+    }
   }
 });
