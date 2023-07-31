@@ -30,7 +30,7 @@ function resetTimer() {
 
 function closeModalAndClosePage() {
   if (!isBtnClicked) {
-    console.log(!isBtnClicked);
+    window.location.replace('https://www.google.com');
     window.close();
   }
   isBtnClicked = false;
