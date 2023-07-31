@@ -8,19 +8,22 @@ const map = new mapboxgl.Map({
   zoom: 9,
 });
 
+let destination = [30.5234, 50.4501];
+
 const marker = new mapboxgl.Marker({
   draggable: true,
 })
-  .setLngLat([30.5234, 50.4501])
+  .setLngLat(destination)
   .addTo(map);
 
 const popup = new mapboxgl.Popup().setHTML('<p>Ми з України.</p>');
-
 marker.setPopup(popup);
-function onDragEnd() {
-  const lngLat = marker.getLngLat();
-  coordinates.style.display = 'block';
-  coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
-}
+popup.addTo(map);
 
-marker.on('dragend', onDragEnd);
+map.on('load', function () {
+  var directions = new MapboxDirections({
+    accessToken: mapboxgl.accessToken,
+  });
+  map.addControl(directions, 'top-left');
+  directions.setDestination(destination);
+});

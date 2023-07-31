@@ -56,10 +56,14 @@
     border-radius: 70px 0px;
     background: $primary-light-color;
     box-shadow: 7px 7px 30px 5px rgba(66, 96, 84, 0.15);
-    width: 571px;
-    height: 226px;
+    max-width: 571px;
+    height: auto;
     position: relative;
     padding: 50px 35px 40px 65px;
+
+    @include desktop-small {
+      margin: 0 auto;
+    }
   }
 
   &__block {

@@ -39,11 +39,16 @@
     display: flex;
     justify-content: center;
     gap: 10px;
+
+    @include desktop-small {
+      flex-wrap: wrap;
+      gap: 50px;
+    }
   }
 
   &__box-image {
     position: relative;
-    width: 556px;
+    max-width: 556px;
     height: auto;
     z-index: 1;
     margin-bottom: 50px;
@@ -57,6 +62,7 @@
   &__image {
     border-radius: 140px 0px;
     width: 100%;
+    // max-width: 556px;
   }
 
   &__caption {

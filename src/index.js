@@ -8,3 +8,4 @@ import './js/map';
 import './js/getFormData';
 import './js/swiper';
 import './js/getData';
+import './js/showNavMenu';
