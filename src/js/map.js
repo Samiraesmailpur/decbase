@@ -16,7 +16,10 @@ const marker = new mapboxgl.Marker({
   .setLngLat(destination)
   .addTo(map);
 
-const popup = new mapboxgl.Popup();
+const popup = new mapboxgl.Popup({
+  focusAfterOpen: false,
+}).setHTML('<p>Ми з України.</p>');
+marker.setPopup(popup);
 popup.addTo(map);
 
 map.on('load', function () {
